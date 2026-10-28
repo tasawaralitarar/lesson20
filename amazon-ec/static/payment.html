@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>決済手続き</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><a href="index.html">簡易ECサイト</a></h1>
+    <nav>
+      <a href="cart.html">カートを見る</a>
+      <a href="orders.html">注文履歴</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>決済手続き</h2>
+    
+    <div id="payment-info" style="margin-bottom: 20px;">
+      <p><strong>注文ID:</strong> <span id="display-order-id">-</span></p>
+      <p><strong>支払金額:</strong> ¥<span id="display-amount">0</span></p>
+    </div>
+
+    <form id="payment-form">
+      <div style="margin-bottom: 15px;">
+        <label for="method"><strong>支払方法選択:</strong></label><br>
+        <select id="method" name="method" required style="padding: 8px; font-size: 16px; margin-top: 5px;">
+          <option value="credit">クレジットカード</option>
+          <option value="bank">銀行振込</option>
+          <option value="cod">代金引換</option>
+        </select>
+      </div>
+
+      <p style="font-size: 0.85em; color: #666;">※実際のカード番号や口座情報は入力・保存されません。</p>
+
+      <button type="submit" class="btn" style="margin-top: 15px;">決済を確定する</button>
+    </form>
+
+    <div id="payment-message" style="margin-top: 20px; font-weight: bold;"></div>
+  </main>
+
+  <script src="payment.js"></script>
+</body>
+</html>
